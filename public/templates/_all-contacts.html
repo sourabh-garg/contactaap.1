@@ -1,0 +1,76 @@
+
+<!-- <md-list>
+
+<md-list-item ng-repeat="user in users | orderBy:'name'">
+<md-button ng-click="selectuser(user)" >
+<md-icon class="avatar"><img src="{{user.avatar}}"/></md-icon>
+{{user.name}} + "  " + {{user.phone}} + "  " +  {{user.email}}
+</md-button>
+</md-item-list>
+
+</md-list>-->
+<div layout-padding>
+<md-autocomplete
+    md-search-text="searchText"
+    md-items = "item in people | filter:searchText"
+    md-item-text="item.name"
+    md-min-length="2"
+    placeholder="Search contact">
+     <md-item-template>
+     <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+     </md-item-template>
+     <md-not-found>
+  No user matching "{{searchText}}" were found.
+ </md-not-found>
+  </md-autocomplete>
+ </div> 
+
+ <md-list>
+ <md-list-item  ng-repeat="person in people | filter:searchText | orderBy:'name'" ng-click="goToPerson(person.name, $event)">
+    <img alt="{{ person.name }}" ng-src="https://lh3.googleusercontent.com/-nR0PNFb3p4k/AAAAAAAAAAI/AAAAAAAAAAA/NVt2CqCrCis/photo.jpg" class="md-avatar" />
+      <p>{{ person.name }}</p>
+      <p>{{ person.phone }}</p>
+       <p>{{ person.email }}</p>   
+      
+    <md-icon ng-click="showConfirm($event, person)"aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="">delete</md-icon>
+  </md-list-item>
+
+</md-list>
+
+<!--
+
+<md-list-item >
+<md-button ng-click="selectuser(user)" >
+<md-icon >more</md-icon>
+   username user.phone  user.email
+</md-button>
+</md-item-list>
+
+</md-list>-->
+
+
+
+
+<!-- 
+
+<div class="topm">
+<md-card class="numb">
+  
+ <md-card-content>
+   <p1><a href="">Sourabh kumar garg<span>7415326288</span><span>Sourabhgrg713@gmail.com</span></a>  
+    <md-button class="md-icon-button more-st" aria-label="More">
+    <md-icon >more_vert</md-icon>
+  </md-button> <p1>
+ </md-card-content>
+      </md-card>
+
+ <md-card class="numb">
+  <md-card-content>
+   <p1><a href="">Sourabh kumar garg<span>7415326288</span><span>Sourabhgrg713@gmail.com</span></a>  
+    <md-button class="md-icon-button more-st" aria-label="More">
+    <md-icon >more_vert</md-icon>
+  </md-button> <p1>
+ </md-card-content>
+      </md-card>
+
+    </div>-->

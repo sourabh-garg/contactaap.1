@@ -1,0 +1,59 @@
+html, body{
+	font-family: 'Roboto', sans-serif;
+	font-size:14px;
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+md-toolbar h1{
+	font-size: 1.250em;
+	font-weight:400;
+	margin:auto;
+
+}
+
+md-toolbar .md-toolbar-tools h1{
+	font-size: 1.250em;
+	font-weight:400;
+	
+}
+#content{
+	padding-left:40px;
+	padding-right:40px;
+	padding-top:5px;
+}
+
+
+
+
+
+.topm{
+	margin-top: 30px;
+}
+
+
+md-card{
+padding:0px;
+min-height:30px;
+margin-left:300px;
+width: 800px;
+md-card-content {
+	padding:5px !important;
+}
+
+
+md-card-content a {
+	color:black;
+	text-decoration:none;
+	padding:5px !important;
+
+	span{
+	padding-left: 100px;
+	};
+}; }
+
+.more-st{
+	margin-left:100px !important;
+	margin-right:0px !important;
+}
