@@ -26,6 +26,7 @@ angular.module('contact').controller('DialogController', ['$scope', '$mdDialog',
     console.log(person.id, data)
 
     contacts.updatethis(person.id, data);
+    $mdDialog.hide(answer);
       $mdToast.show( 
             $mdToast.simple()
               .content("Updated!")
@@ -33,7 +34,7 @@ angular.module('contact').controller('DialogController', ['$scope', '$mdDialog',
               .hideDelay(2000)
               );
 
-    $mdDialog.hide(answer);
+    
   };
 	
 }]);

@@ -33,6 +33,7 @@ angular.module('contact').controller('MainCtrl',[ '$scope', '$mdSidenav','$mdDia
                 phone: vm.info.phone,
                 email: vm.info.email
               });
+            $mdSidenav('left').close();
 
 
                 
