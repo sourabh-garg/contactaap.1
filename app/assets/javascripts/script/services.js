@@ -1,4 +1,4 @@
-angular.module('contact').service('contacts', function ($http) {
+angular.module('contact').service('contacts', ['$http', function ($http) {
 	
 		var o =  this;
           
@@ -21,4 +21,4 @@ angular.module('contact').service('contacts', function ($http) {
            o.updatethis= function(id, data){
             return $http.put('/contacts/' + id + '.json', data);
            };
-});
+}]);
