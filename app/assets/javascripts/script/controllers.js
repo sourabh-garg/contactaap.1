@@ -6,12 +6,12 @@ angular.module('contact').controller('MainCtrl',[ '$scope', '$mdSidenav','$mdDia
          var vm = this;
          vm.searchText = "";
          vm.info = {};
-         vm.people= [];
+         vm.people = [];
+
 
       
          
         contacts.getall().then(function(response){
-        console.log(response.data);
          vm.people = response.data;
         });
 
@@ -20,19 +20,21 @@ angular.module('contact').controller('MainCtrl',[ '$scope', '$mdSidenav','$mdDia
           $mdSidenav('left').open();
         };
 
+        vm.clear = function(){
+          vm.info = {};
+          vm.myform.$setPristine();
+          vm.myform.$setUntouched();
+        }
+
 
         vm.saveit = function(info){
 
-                contacts.add({
-                name: vm.info.name,
-                phone: vm.info.phone,
-                email: vm.info.email
-              });
-              vm.people.push({
-                name: vm.info.name,
-                phone: vm.info.phone,
-                email: vm.info.email
-              });
+          vm.xyz = {name: vm.info.name, phone: vm.info.phone, email: vm.info.email};
+
+                vm.people.push(vm.xyz); 
+                contacts.add(vm.xyz);
+                console.log(vm.people);
+
             $mdSidenav('left').close();
 
 
