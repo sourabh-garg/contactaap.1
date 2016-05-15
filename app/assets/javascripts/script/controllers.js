@@ -27,7 +27,11 @@ angular.module('contact').controller('MainCtrl', function ($scope, $mdSidenav,$m
                 phone: vm.info.phone,
                 email: vm.info.email
               });
-              vm.people.push(info);
+              vm.people.push({
+                name: vm.info.name,
+                phone: vm.info.phone,
+                email: vm.info.email
+              });
 
 
                 
