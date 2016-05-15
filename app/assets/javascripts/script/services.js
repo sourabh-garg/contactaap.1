@@ -18,7 +18,7 @@ angular.module('contact').service('contacts', function ($http) {
            o.deletethis= function(id){
             return $http.delete('/contacts/' + id + '.json');
            };
-           o.updatethis= function(id){
-            return $http.put('/contacts/' + id + '.json');
+           o.updatethis= function(id, data){
+            return $http.put('/contacts/' + id + '.json', data);
            };
 });

@@ -1,36 +1,39 @@
+
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
                  md-is-locked-open="$mdMedia('gt-sm')">
 	<md-toolbar>
 	<h1>Contacts</h1>
     </md-toolbar>
-
+<div ng-controller="MainCtrl as vm">
     <md-content layout-padding>
-    <form name="myform">
+    <form name="vm.myform">
 	    	<md-input-container>
 	    	<label for="name">Contact Name</label>
-	    	<input type="text" md-maxlength="20" required="" md-no-asterisk  name="name" ng-model="info.name" md-autofoucs>
-	    	<div ng-messages="myform.name.$error" role="alert">
+	    	<input type="text" md-maxlength="20" required="" md-no-asterisk  name="name" ng-model="vm.info.name" md-autofoucs>
+	    	<div ng-messages="vm.myform.name.$error" role="alert">
           <div ng-message="required">This is required.</div>
           <div ng-message="md-maxlength">The name has to be less than 20 characters long.</div>
           </div>
 	    </md-input-container>
 	    <md-input-container>
 	    	<label for="phone">Phone Number</label>
-	    	<input type="text" name="phone" required md-no-asterisk ng-model="info.phone">
-	    	<div ng-messages="myform.phone.$error">
+	    	<input type="text" name="phone" required md-no-asterisk ng-model="vm.info.phone">
+	    	<div ng-messages="vm.myform.phone.$error">
            <div ng-message="required">This is required.</div>
            </div>
 	    </md-input-container>
 	    <md-input-container>
 	    	<label for="email">Email</label>
-	    	<input type="text" name="email" ng-model="info.email">
+	    	<input type="text" name="email" ng-model="vm.info.email">
 	    </md-input-container>
 	    <md-input-container>
-	    <md-button class="md-primary" ng-click="saveit(info, myform)">Save</md-button>
+	    <md-button class="md-primary" ng-click="vm.saveit(vm.info)">Save</md-button>
 	    <md-button class="md-primary">Cancel</md-button>
 	     </md-input-container>
 
 	</form>
+	</div>
 
    </md-content>
 </md-sidenav>
+

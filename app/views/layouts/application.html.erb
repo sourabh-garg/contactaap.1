@@ -8,23 +8,9 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body layout="row" ng-cloak  ng-controller="MainCtrl">
+<body layout="row" ng-cloak>
 
- <div ng-include="'templates/sidenav'" layout="vertical"></div>
+    <%= yield %>
 
-
-
-<div layout="column" flex>
-	<div ng-include="'templates/toolbar-header'"></div>
-
-  <md-content flex id="content">
- <div ng-include="'templates/_all-contacts'"></div>
-
-</md-content>
-
-</div>
-
-<%= yield %>
-
-</body>
-</html>
+	</body>
+	</html>

@@ -1,0 +1,58 @@
+
+
+<md-dialog aria-label="Contact"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{name}}</h2>
+        <span flex></span>
+         <md-button class="md-icon-button" ng-click="edit()">
+          <md-icon>edit</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon>close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Contact Details</h2>
+        <md-content layout-padding>
+    <form name="myform">
+        <md-input-container>
+        <label for="name">Contact Name</label>
+        <input type="text" md-maxlength="20" required="" md-no-asterisk  name="name" ng-model="name" md-autofoucs ng-disabled="val">
+        <div ng-messages="myform.name.$error" role="alert">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="md-maxlength">The name has to be less than 20 characters long.</div>
+          </div>
+      </md-input-container>
+      <md-input-container>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" required md-no-asterisk ng-model="phone" ng-disabled="val">
+        <div ng-messages="myform.phone.$error">
+           <div ng-message="required">This is required.</div>
+           </div>
+      </md-input-container>
+      <md-input-container>
+        <label for="email">Email</label>
+        <input type="text" name="email" ng-model="email" ng-disabled="val">
+      </md-input-container>
+
+  </form>
+
+       
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()">
+       Cancel
+      </md-button>
+      <md-button ng-click="answer('useful')" style="margin-right:20px;">
+       Update It.
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

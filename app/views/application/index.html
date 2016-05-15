@@ -1,2 +1,16 @@
-<ui-view></ui-view>
+   <div ng-include="'templates/sidenav'" layout="vertical"></div>
+
+
+    <div layout="column" flex>
+	<div ng-include="'templates/toolbar-header'"></div>
+
+    <md-content flex id="content">
+    <ui-view></ui-view>
+    <!--<div ng-include="'templates/_all-contacts'"></div>-->
+
+   </md-content>
+
+    </div>
+
+
 
