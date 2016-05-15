@@ -1,4 +1,5 @@
-angular.module('contact').controller('MainCtrl', function ($scope, $mdSidenav,$mdDialog,$mdToast,$mdMedia, contacts) {
+angular.module('contact').controller('MainCtrl',[ '$scope', '$mdSidenav','$mdDialog','$mdToast'
+                       ,'$mdMedia', 'contacts', function ($scope, $mdSidenav,$mdDialog,$mdToast,$mdMedia, contacts) {
 
          $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
@@ -102,7 +103,7 @@ angular.module('contact').controller('MainCtrl', function ($scope, $mdSidenav,$m
   };
 
 
-       });
+       }]);
 
 function DialogController($scope, $mdDialog,$mdToast, person, contacts) {
 
