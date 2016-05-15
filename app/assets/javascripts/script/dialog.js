@@ -25,14 +25,17 @@ angular.module('contact').controller('DialogController', ['$scope', '$mdDialog',
       email:$scope.email}
     console.log(person.id, data)
 
-    contacts.updatethis(person.id, data);
-    $mdDialog.hide(answer);
+    contacts.updatethis(person.id, data).then(function(){
+$mdDialog.hide(answer);
       $mdToast.show( 
             $mdToast.simple()
               .content("Updated!")
               .position('top, right')
               .hideDelay(2000)
               );
+      
+    })
+    
 
     
   };

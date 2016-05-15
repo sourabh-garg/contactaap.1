@@ -35,13 +35,9 @@ angular.module('contact').controller('MainCtrl',[ '$scope', '$mdSidenav','$mdDia
                 contacts.add(vm.xyz);
                 console.log(vm.people);
 
-            $mdSidenav('left').close();
-
-
-                
-
-              $mdToast.show( 
-              $mdToast.simple()
+               $mdSidenav('left').close();
+               $mdToast.show( 
+               $mdToast.simple()
               .content("ContactAdded!")
               .position('top, right')
               .hideDelay(2000)
