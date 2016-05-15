@@ -29,10 +29,8 @@
  <md-list-item  ng-repeat="person in vm.people | filter:vm.searchText | orderBy:'name'" ng-click="showDialog($event, person)">
     <img alt="{{ person.name }}" ng-src="https://lh3.googleusercontent.com/-nR0PNFb3p4k/AAAAAAAAAAI/AAAAAAAAAAA/NVt2CqCrCis/photo.jpg" class="md-avatar" />
        <p>{{ person.name }}</p>
-      <p>{{ person.phone }}</p>
-      <p>{{ person.email }}</p>   
+       <p>{{ person.phone }}</p> 
       
-
     <md-icon ng-click="vm.showConfirm($event, person)"aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="">delete</md-icon>
   </md-list-item>
 
